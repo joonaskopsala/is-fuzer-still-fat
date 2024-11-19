@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Box } from '@mui/material'
 
 const RandomImage = () => {
@@ -11,7 +12,12 @@ const RandomImage = () => {
     '/images/image7.png'
   ]
 
-  const randomImage = images[Math.floor(Math.random() * images.length)]
+  const [randomImage, setRandomImage] = useState(images[0])
+
+  useEffect(() => {
+    const selectedImage = images[Math.floor(Math.random() * images.length)]
+    setRandomImage(selectedImage)
+  }, [])
 
   return (
     <Box
