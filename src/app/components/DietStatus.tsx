@@ -5,23 +5,27 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import PauseCircleIcon from '@mui/icons-material/PauseCircle'
 import { Box, Stack, Typography } from '@mui/material'
 import type { DietStatus } from '../utils'
+import StyledImage from './StyledImage'
 
 const DietStatus = ({ status }: { status: string }) => {
   const dietStatuses = [
     {
       status: 'ongoing',
-      text: 'Ongoing! 😊',
-      icon: <CheckCircleIcon sx={{ fontSize: '3rem' }} />
+      text: 'Käynnissä! 😊',
+      icon: <CheckCircleIcon sx={{ fontSize: '3rem' }} />,
+      image: 'images/happy.png'
     },
     {
       status: 'unclear',
-      text: 'Unclear 🤔',
-      icon: <PauseCircleIcon sx={{ fontSize: '3rem' }} />
+      text: 'Epäselvä 🤔',
+      icon: <PauseCircleIcon sx={{ fontSize: '3rem' }} />,
+      image: 'images/epaselva.png'
     },
     {
       status: 'over',
-      text: 'Over 😔',
-      icon: <CancelIcon sx={{ fontSize: '3rem' }} />
+      text: 'Ohi 😔',
+      icon: <CancelIcon sx={{ fontSize: '3rem' }} />,
+      image: 'images/ohi.png'
     }
   ]
 
@@ -31,10 +35,10 @@ const DietStatus = ({ status }: { status: string }) => {
     return (
       <Paper elevation={3} sx={{ padding: 4 }}>
         <Stack spacing={2}>
-          <Typography variant="h1">{'Diet status: '}</Typography>
+          <Typography variant="h1">{'Dieetti status: '}</Typography>
           <Stack direction="column" spacing={2}>
             <Typography variant="h2">{currentStatus?.text}</Typography>
-            <Box alignContent="center">{currentStatus?.icon}</Box>
+            <StyledImage image={currentStatus.image} />
           </Stack>
         </Stack>
       </Paper>

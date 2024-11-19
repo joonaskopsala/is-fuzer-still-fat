@@ -20,7 +20,7 @@ const weightData = [
 const Graph = () => (
   <Paper elevation={3} sx={{ padding: 4 }}>
     <Typography variant="h4" gutterBottom>
-      {'Weight loss progress'}
+      {'Painon kehitys'}
     </Typography>
     <Box sx={{ height: 400 }}>
       <ResponsiveContainer width="100%" height="100%">
@@ -29,7 +29,12 @@ const Graph = () => (
           <XAxis dataKey="date" />
           <YAxis domain={['dataMin - 2', 'dataMax + 2']} />
           <Tooltip />
-          <Line type="monotone" dataKey="weight" stroke="#8884d8" />
+          <Line
+            type="monotone"
+            dataKey="weight"
+            strokeWidth={3}
+            stroke="#ff0000"
+          />
         </LineChart>
       </ResponsiveContainer>
     </Box>
