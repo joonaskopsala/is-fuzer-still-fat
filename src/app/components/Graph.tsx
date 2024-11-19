@@ -9,7 +9,8 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  ReferenceLine
 } from 'recharts'
 
 const weightData = [
@@ -18,7 +19,7 @@ const weightData = [
 ]
 
 const Graph = () => (
-  <Paper elevation={3} sx={{ padding: 4 }}>
+  <Paper elevation={3} sx={{ padding: 4, marginBottom: '2rem' }}>
     <Typography variant="h4" gutterBottom>
       {'Painon kehitys'}
     </Typography>
@@ -29,6 +30,7 @@ const Graph = () => (
           <XAxis dataKey="date" />
           <YAxis domain={['dataMin - 2', 'dataMax + 2']} />
           <Tooltip />
+          <Legend />
           <Line
             type="monotone"
             dataKey="weight"
