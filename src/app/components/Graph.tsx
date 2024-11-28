@@ -15,7 +15,8 @@ import {
 
 const weightData = [
   { date: '2024-11-10', weight: 107.6 },
-  { date: '2024-11-18', weight: 104.4 }
+  { date: '2024-11-18', weight: 104.4 },
+  { date: '2024-11-27', weight: 103.5 }
 ]
 
 const Graph = () => (

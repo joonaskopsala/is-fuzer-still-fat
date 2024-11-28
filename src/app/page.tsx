@@ -14,12 +14,11 @@ export default function Page() {
     <>
       <Title />
       <Stack spacing={3} marginBottom="2rem">
+        <Graph />
         <Stack direction="row" spacing={3}>
           <DietStatus status={'ongoing'} />
-          <FatnessStatus isFat={true} />
-          <KgToGoal current={104} goal={85} />
+          <KgToGoal current={103.5} goal={85} />
         </Stack>
-        <Graph />
       </Stack>
       <Footer />
     </>

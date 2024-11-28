@@ -15,9 +15,13 @@ const RandomImage = () => {
   const [randomImage, setRandomImage] = useState(images[0])
 
   useEffect(() => {
-    const selectedImage = images[Math.floor(Math.random() * images.length)]
-    setRandomImage(selectedImage)
-  }, [])
+    const interval = setInterval(() => {
+      const selectedImage = images[Math.floor(Math.random() * images.length)]
+      setRandomImage(selectedImage)
+    }, 10000)
+
+    return () => clearInterval(interval)
+  }, [images])
 
   return (
     <Box
@@ -26,12 +30,10 @@ const RandomImage = () => {
       boxShadow={4}
       alt="Random Image"
       sx={{
-        maxWidth: '20rem',
-        maxHeight: '30rem',
-        height: 'auto',
         borderRadius: '8px',
         display: 'block',
-        margin: '0 auto'
+        margin: '0 auto',
+        maxHeight: '20rem'
       }}
     />
   )
