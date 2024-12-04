@@ -5,11 +5,12 @@ import { Graph } from './components/Graph'
 import { DietStatus } from './components/DietStatus'
 import { Stack } from '@mui/material'
 import { Title } from './components/Title'
-import { FatnessStatus } from './components/FatnessStatus'
 import { Footer } from './components/Footer'
 import { KgToGoal } from './components/KgToGoal'
+import weightData from './weight.json'
 
 export default function Page() {
+  const currentWeight = weightData[weightData.length - 1].weight
   return (
     <>
       <Title />
@@ -17,7 +18,7 @@ export default function Page() {
         <Graph />
         <Stack direction="row" spacing={3}>
           <DietStatus status={'ongoing'} />
-          <KgToGoal current={103.5} goal={85} />
+          <KgToGoal current={currentWeight} goal={85} />
         </Stack>
       </Stack>
       <Footer />

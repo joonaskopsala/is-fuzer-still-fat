@@ -11,7 +11,15 @@ const KgToGoal = ({ current, goal }: { current: number; goal: number }) => {
   const bgColor = getBgColor(countedKg)
 
   return (
-    <Paper sx={{ padding: 3, borderRadius: 2, boxShadow: 3, width: '100%' }}>
+    <Paper
+      sx={{
+        padding: 3,
+        borderRadius: 2,
+        boxShadow: 3,
+        width: '100%',
+        alignContent: 'center'
+      }}
+    >
       <Stack spacing={4} alignItems="center">
         <Typography variant="h1" sx={{ textAlign: 'center' }}>
           {'Kg tavoitteeseen:'}
@@ -32,13 +40,13 @@ const KgToGoal = ({ current, goal }: { current: number; goal: number }) => {
             textAlign: 'center'
           }}
         >
-          {countedKg}
+          {countedKg.toFixed(1)}
         </Typography>
         <Typography variant="h1" sx={{ textAlign: 'center' }}>
           {'Joka on kaloreina:'}
         </Typography>
         <Typography variant="h3" color={bgColor}>
-          {countedKg * 7700} kcal
+          {(countedKg * 7700).toFixed(0)} kcal
         </Typography>
       </Stack>
     </Paper>

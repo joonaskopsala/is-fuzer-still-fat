@@ -34,7 +34,7 @@ const DietStatus = ({ status }: { status: string }) => {
 
   if (currentStatus) {
     return (
-      <Paper elevation={3} sx={{ padding: 4, width: '100%', height: '30rem' }}>
+      <Paper elevation={3} sx={{ padding: 4, width: '100%', height: '32rem' }}>
         <Stack spacing={2}>
           <Typography variant="h1">{'Dieetti status: '}</Typography>
           <Stack direction="column" spacing={2}>

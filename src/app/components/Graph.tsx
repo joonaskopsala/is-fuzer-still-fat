@@ -9,27 +9,31 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
-  ReferenceLine
+  ResponsiveContainer
 } from 'recharts'
-
-const weightData = [
-  { date: '2024-11-10', weight: 107.6 },
-  { date: '2024-11-18', weight: 104.4 },
-  { date: '2024-11-27', weight: 103.5 }
-]
+import weightData from '../weight.json'
 
 const Graph = () => (
   <Paper elevation={3} sx={{ padding: 4, marginBottom: '2rem' }}>
     <Typography variant="h4" gutterBottom>
       {'Painon kehitys'}
     </Typography>
-    <Box sx={{ height: 400 }}>
+    <Box
+      sx={{
+        height: 400,
+        backgroundColor: '#3a3a3a',
+        borderRadius: '8px',
+        padding: 3
+      }}
+    >
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={weightData}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
-          <YAxis domain={['dataMin - 2', 'dataMax + 2']} />
+          <XAxis dataKey="date" tick={{ fill: 'whitesmoke', fontSize: 15 }} />
+          <YAxis
+            domain={['dataMin - 2', 'dataMax + 2']}
+            tick={{ fill: 'whitesmoke', fontSize: 15 }}
+          />
           <Tooltip />
           <Legend />
           <Line
